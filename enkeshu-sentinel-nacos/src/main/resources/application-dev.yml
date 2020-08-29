@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.109.128:8858
+        client-ip: 172.26.104.183
+      eager: true
+      datasource:
+        ds:
+          nacos:
+            server-addr: 192.168.109.128:8848
+            dataId: ${spring.application.name}-flow-rules
+            groupId: SENTINEL_GROUP
+            data_type: json
+            rule_type: flow
+logging:
+  level:
+    root: info

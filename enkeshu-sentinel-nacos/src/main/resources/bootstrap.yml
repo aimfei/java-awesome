@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active:  ${SPRING_PROFILES_ACTIVE:dev}
+  application:
+    name: enkeshu-sentcos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.109.128:8848
+        metadata:
+          VERSION: v1
+          CANARYGRAY: prod
+        enabled: true
+        register-enabled: true
+        #network-interface: 172.26.104.183
+        ip: 172.26.104.183
+      config:
+        server-addr: 192.168.109.128:8848
+        file-extension: yml
+        refresh:
+          enabled: true
+
+logging:
+  file:
+    path: D:\Workspace\my\logs
+jasypt:
+  encryptor:
+    password: KJFDSAFJ34882JF
+    algorithm: PBEWithMD5AndDES
