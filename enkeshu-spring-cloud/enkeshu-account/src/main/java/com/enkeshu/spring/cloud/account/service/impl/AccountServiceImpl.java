@@ -19,10 +19,5 @@ import java.time.LocalDateTime;
 @Service
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, AccountModel> implements AccountService {
 
-    @Override
-    public boolean save(AccountModel entity) {
-        entity.setCreateTime(LocalDateTime.now());
-        entity.setModifiedTime(LocalDateTime.now());
-        return super.save(entity);
-    }
+
 }
