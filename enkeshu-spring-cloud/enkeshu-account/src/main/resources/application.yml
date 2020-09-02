@@ -1,0 +1,49 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+  health:
+    sentinel:
+      enabled: false
+  server:
+    port: 8081
+
+server:
+  port: 8080
+spring:
+  application:
+    name: enkeshu-account
+  cloud:
+    sentinel:
+      eager: true
+      transport:
+        dashboard: 192.168.109.128:8858
+        client-ip: 172.26.104.183
+    nacos:
+      discovery:
+        server-addr: 192.168.109.128:8848
+        ip: 172.26.104.183
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      username: root
+      password: 123456
+    url: jdbc:mysql://192.168.109.128:3306/db_account?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.enkeshu.spring.cloud.account.infra.mapper
+  global-config:
+    db-config:
+      id-type: id_worker
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
