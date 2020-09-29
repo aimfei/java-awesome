@@ -16,6 +16,7 @@
         <module>enkeshu-dubbo-bean</module>
         <module>enkeshu-dubbo/enkehsu-dubbo-acc/enkeshu-acc-client</module>
         <module>enkeshu-dubbo/enkehsu-dubbo-acc/enkeshu-acc-srv</module>
+        <module>enkeshu-spring</module>
     </modules>
     <packaging>pom</packaging>
     <build>
