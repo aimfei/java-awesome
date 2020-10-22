@@ -9,7 +9,9 @@ public class LoggerInterceptor implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         System.out.println( getClass()+"MethodInterceptor start");
+        System.out.println("exec method"+methodInvocation.getMethod());
         Object result = methodInvocation.proceed();
+        System.out.println("执行结果="+result);
         System.out.println(getClass()+"MethodInterceptor stop");
         return result;
     }

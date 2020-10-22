@@ -9,7 +9,9 @@ public class AopMain {
         applicationContext.refresh();
 
         Calculate calculate = (Calculate) applicationContext.getBean("calculateProxy");
-        //System.out.println(calculate);
-        System.out.println(calculate.add(1,3));
+        calculate.add(1,3);
+
+        System.out.println("=============");
+        calculate.div(30,4);
     }
 }
