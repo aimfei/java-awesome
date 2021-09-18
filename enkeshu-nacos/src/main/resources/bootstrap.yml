@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        contextPath: /nacos
+        file-extension: yml
+        extension-configs:
+          - data-id: common1.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: common2.yml
+            group: DEFAULT_GROUP
+            refresh: true
+        password: nacos
+        server-addr: 127.0.0.1:8848
+        username: nacos
+
